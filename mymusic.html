@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Page</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(25, 3, 65);
+            width: 100%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(63, 48, 189, 0.856);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            height: 60px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: whitesmoke;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: rgb(255, 166, 0);
+        }
+
+        /* Hero Section */
+        .head {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .head img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .head h1 {
+            color: whitesmoke;
+            margin-top: 200px;
+            font-size: 4rem;
+            font-weight: 700;
+        }
+
+        .head .p1 {
+            color: whitesmoke;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .head .p2 {
+            color: whitesmoke;
+            margin: 25px auto 0;
+            width: 60%;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Music Section */
+        .music {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .music h1 {
+            color: whitesmoke;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .music .p3 {
+            color: whitesmoke;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .music .p4 {
+            color: whitesmoke;
+            margin: 0 auto 30px;
+            max-width: 800px;
+            font-size: 1.1rem;
+        }
+
+        .btn button {
+            background-color: rgba(255, 0, 0, 0.884);
+            color: whitesmoke;
+            padding: 20px 35px;
+            border: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn button:hover {
+            background-color: darkred;
+        }
+
+        .music .p5 {
+            color: whitesmoke;
+            font-size: 1rem;
+            margin-top: 40px;
+            margin-bottom: 90px;
+        }
+
+        /* Picture Section */
+        .picture {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .picture img {
+            width: 70%;
+            height: auto;
+            margin-top: -170px;
+        }
+
+        /* Collection Section */
+        .collection {
+            background-color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .collection h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .collection p {
+            font-size: 1rem;
+            margin: 0 auto 30px;
+            max-width: 900px;
+            letter-spacing: 1px;
+        }
+
+        .button2 button {
+            background-color: rgba(46, 2, 129, 0.973);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button2 button:hover {
+            background-color: rgb(70, 16, 150);
+        }
+
+        .img2 {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .img2 img {
+            width: 70%;
+        }
+
+        /* Video Section */
+        .video {
+            position: relative;
+            color: whitesmoke;
+            text-align: center;
+            /* padding: 60px 20px; */
+        }
+
+        .video img {
+            width: 100%;
+            height: auto;
+            opacity: 0.6;
+        }
+
+        .video h2 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            width: 80%;
+            flex-wrap: wrap;
+        }
+
+        .video p {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .card {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 70vh;
+        }
+
+        .img5>img {
+            width: 90%;
+            margin-left: 10%;
+            margin-top: 5%;
+        }
+
+        .content5 {
+            width: 50%;
+            /* height: 70vh; */
+            flex-wrap: wrap;
+        }
+
+        .redeem {
+            background-color: rgb(70, 16, 150);
+            color: whitesmoke;
+            border: 0;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .redeem:hover {
+            background-color: rgba(70, 16, 150, 0.863);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* margin-top: 1.5%; */
+            width: 100%;
+            height: 40vh;
+        }
+
+        .shop {
+            color: whitesmoke;
+        }
+
+        .shop>h2 {
+            border-bottom: 2px solid whitesmoke;
+            margin-bottom: 8%;
+        }
+
+        .store {
+            color: whitesmoke;
+        }
+
+        .store>h2 {
+            border-bottom: 2px solid whitesmoke;
+            margin-bottom: 8%;
+        }
+
+        .education {
+            color: whitesmoke;
+        }
+
+        .education>h2 {
+            border-bottom: 2px solid whitesmoke;
+            margin-bottom: 8%;
+        }
+
+        .about {
+            color: whitesmoke;
+        }
+
+        .about>h2 {
+            border-bottom: 2px solid whitesmoke;
+            margin-bottom: 8%;
+        }
+
+        .msg {
+            background-color: rgb(81, 7, 150);
+            text-align: center;
+            color: whitesmoke;
+            font-size: 19px;
+            padding: 5px;
+        }
+
+        @media (max-width:813px) {
+            .video>h2 {
+                font-size: 23px;
+                margin-bottom: 22px;
+                /* flex-wrap: wrap; */
+            }
+        }
+        @media (max-width: 1600px) and (min-width:950) {
+            .card {
+                width: 100%;
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">myTunes</div>
+        <nav>
+            <a href="#">Overview</a>
+            <a href="#">Music</a>
+            <a href="#">Video</a>
+            <a href="#">Gift Cards</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="head">
+            <img src="hero_image.png" alt="Hero Image" />
+            <h1>myTunes</h1>
+            <p class="p1">Your music, movies, and TV shows take center stage.</p>
+            <p class="p2">myTunes is the best way to organize and enjoy the music, movies and TV shows you already
+                have—and shop for the ones you want. Enjoy all the entertainment myTunes has to offer on your Mac and
+                PC.</p>
+        </div>
+
+        <div class="music">
+            <h1>Music</h1>
+            <p class="p3">45 million songs. Zero ads.</p>
+            <p class="p4">Stream over 45 million songs ad-free. Or download albums and tracks to listen offline. All the
+                music in your personal myTunes library—no matter where it came from—lives right alongside the Orange
+                Music catalog. Start your free three-month trial with no commitment, and cancel anytime.</p>
+            <div class="btn">
+                <button>Start Your Trial Now</button>
+            </div>
+            <p class="p5">Orange Music is available in myTunes and for iOS and Android devices.</p>
+        </div>
+
+        <div class="picture">
+            <img src="ipad-iphone.png" alt="iPad and iPhone" />
+        </div>
+
+        <div class="collection">
+            <h2>The movie and TV collection you always wished for. Granted.</h2>
+            <p>With over 100,000 movies and TV shows to choose from, there’s always something great to watch on myTunes.
+                And if you watch on Orange TV 4K, you’ll be able to enjoy a tremendous selection of your favorite
+                content in 4K HDR. So get ready to enjoy episodes of your favorite TV shows or hit movies anytime,
+                anywhere. Just tap to play, or download if you're going somewhere without Wi-Fi.</p>
+            <div class="button2">
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <div class="img2">
+            <img src="mac.png" alt="Mac Device" />
+        </div>
+
+        <div class="video">
+            <img src="video.png" alt="Video Background" />
+            <h2>A world of entertainment. Available wherever you are.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis at repellendus voluptas, optio ratione
+                eligendi error laudantium aperiam excepturi iste, facilis assumenda voluptate ipsam molestiae, beatae
+                harum incidunt eveniet porro quasi officiis obcaecati autem magnam!</p>
+        </div>
+        <div class="card">
+            <div class="img5">
+
+                <img src="gift_card.png" alt="">
+            </div>
+            <div class="content5">
+                <h2>Gift Cards</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque rerum provident, quis nesciunt totam
+                     aliquid amet dolorum facilis beatae reiciendis a
+                    cum! Laborum rem, quod temporibus explicabo facere quia voluptate?</p>
+                <p>Already have an Orange MyTunes Music Gift Card</p><br>
+                <button class="redeem">Redeem</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+
+            <div class="shop">
+                <h2>Shop & Learn</h2>
+                <p>Music</p>
+                <p>Movies</p>
+                <p>Shows</p>
+                <p>Apps</p>
+                <p>Gift Cards</p>
+            </div>
+            <div class="store">
+                <h2>Orange Store</h2>
+                <p>Find a Store</p>
+                <p>Today at Orange</p>
+                <p>Orange Camp</p>
+                <p>Financing</p>
+                <p>Order Status</p>
+            </div>
+            <div class="education">
+                <h2>Education & Business</h2>
+                <p>Orange & Education</p>
+                <p>Shop for Collage</p>
+                <p>Orange & Business</p>
+                <p>Shop For Business</p>
+                <p>Jobs</p>
+            </div>
+            <div class="about">
+                <h2>About Orange</h2>
+                <p>Newsroom</p>
+                <p>Orange Leadership</p>
+                <p>Investors</p>
+                <p>Envents</p>
+                <p>Contact Orange</p>
+            </div>
+        </div>
+        <div class="msg">
+            Copyright© 2022 Do Some Coding
+        </div>
+    </footer>
+</body>
+
+</html>
